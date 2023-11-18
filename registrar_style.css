@@ -1,0 +1,124 @@
+
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 50%;
+    margin: 0 25%;
+    gap: 24px;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
+input{
+    border: 1px solid var(--texto, #0D0210);
+    background: var(--violeta-claro, #FFFBFF);
+    width: 100%;
+    height: 81px;
+    padding: 0;
+    justify-self: center;
+    outline-color: #6B2E69;
+}
+
+input[type="submit"]{
+    background: #6B2E69;
+    width: 50%;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--violeta-claro, #FFFBFF);
+    text-align: center;
+    font-family: Rokkitt;
+    font-size: 37px;
+    font-weight: 600;
+
+}
+
+/* selector con pseudoelementos */
+input::placeholder{
+    color: var(--texto-inputs, rgba(112, 100, 115, 0.80));
+    font-family: Rokkitt;
+    font-size: 20px;
+    font-weight: 400;
+    padding-left: 15px;
+
+}
+
+#nombre{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; 
+}
+
+#apellidos{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#email{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#contrasenya{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+#submit{
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+}
+/* selectores combinados*/
+p, a{
+    color: var(--texto, #0D0210);
+    font-family: Rokkitt;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin: 17px 0 103px 0;
+    justify-self: center;
+}
+
+@media only screen and (max-width: 700px) {
+
+    form{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "nombre"
+            "apellidos"
+            "email"
+            "contrasenya"
+            "submit";
+    }
+    
+    input{
+        height: 52.35px;
+    }
+
+    input::placeholder{
+        font-size: 19px;
+    }
+
+    /*Selector de atributo*/
+    input[type="submit"]{
+        width: 100%;
+        padding: 0;
+        font-size: 26px;
+    }
+
+    #nombre{
+        grid-area: nombre;
+    }
+    #apellidos{
+        grid-area: apellidos;
+    }
+    #email{
+        grid-area: email;
+    }
+    #contrasenya{
+        grid-area: contrasenya;
+    }
+    #submit{
+        grid-area: submit;
+    }    
+}
