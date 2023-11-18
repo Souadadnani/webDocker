@@ -1,0 +1,14 @@
+h1{
+  color: red;
+  font-size: 30px;
+}
+ul{
+  list-style-type: none;
+}
+a{
+   text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
